@@ -86,6 +86,6 @@ Distinct queries per day, hour and minute are found looping the day queries and 
 
 Distinct queries per month and year are found by merging queries and updating their counts from different days. To reduce the number of queries for merging, logs per day are divided into frequent logs and unique logs. Unique logs are those, that are met only within one day. So, we can only merge frequent logs and just add unique ones in the end.
 
-Top elements are found using heap. We found top k elements from all frequent logs, top k elements from all unique logs, and finally top k elements from merged tops. The time complexity of getting top k queries in a list is O(n * lg(k)). So in our case it is O(n * lg(k)) + O(m * lg(k)) + O(2k * lg(k)) or O(max(n, m, k)).
+Top elements are found using heap. We found top k elements from all frequent logs, top k elements from all unique logs, and finally top k elements from merged tops. The time complexity of getting top k queries in a list is O(n * lg(k)). So in our case it is O(n * lg(k)) + O(m * lg(k)) + O(2k * lg(k)) or O(max(n, m, k)*lg(k)).
 
 
